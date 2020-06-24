@@ -23,7 +23,7 @@ const products = [{
         quantity: 2
     },
 ];
-// =========рабочий вариант, но хотелось бы обсудить, как избежать 3ех "No product"(помимо удалени элс)?=========
+// =========рабочий вариант, но хотелось бы обсудить, как избежать 3ех "No product"(помимо удаления элс)?=========
 const calculateTotalPrice = function (allProdcuts, productName) {
     // const values = Object.entries(...allProdcuts);
     // console.log(values[1]);
