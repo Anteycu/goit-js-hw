@@ -16,8 +16,7 @@
 
 // if (total < ordered) {
 //     console.log('Do not enough products!');
-// }
-// if (ordered <= 0) {
+// } else if (ordered <= 0) {
 //     console.log('You should to write quantity');
 // } else {
 //     console.log('Order created, our manager call you');
@@ -50,17 +49,12 @@
 // let totalPrice;
 // let balance;
 
-// const quantityOfDroids = prompt(systemInfo);
 // systemInfo = "Please, enter quantity of repair droids";
+// const quantityOfDroids = prompt(systemInfo);
 // const isquantityOfDroids = isNaN(quantityOfDroids);
 
-// // =====================================================
-// // if (quantityOfDroids !== isNaN) {
-// // systemInfo = "Please, enter quantity in numbers"; - Это не работает так как були пришли или я мог это применить?
-// // =====================================================
-
 // if (quantityOfDroids !== null) {
-//     if ((quantityOfDroids !== null) && isquantityOfDroids) {
+//     if (isquantityOfDroids) {
 //         systemInfo = "Please, enter quantity in numbers";
 //     } else {
 //         totalPrice = quantityOfDroids * pricePerDroid;
@@ -80,11 +74,6 @@
 
 // delivInfo = "Please, enter country";
 // const delivery = prompt(delivInfo);
-
-// // Почему в такой последовательности промт не подписывается информацией в дэливИнфо, а работает только как прописал выше ?
-// //     В предыдущем задании работало и в такой последовательности как ниже.
-// // const delivery = prompt(delivInfo);
-// // delivInfo = "Please, enter country";
 
 // if (delivery !== null) {
 //     switch (delivery) {
@@ -117,16 +106,8 @@
 // console.log(delivInfo);
 
 // ===========================hw-1-6=====================================
-// ========================попытка сам==================
-// input = Number(input);
-// if (input !== null) {
-//     total += input;
-//     console.log(input);
-// } else {
-//     alert('Было введено не число, попробуйте еще раз');
-// }
 
-// ========================с Репетой (проверяйте это)====================
+// ========================вариант по примеру из вебинара Репеты====================
 // Алгоритм //
 // 1 - создать цикл
 // 2 - если null то остановить цикл
@@ -157,8 +138,7 @@ do {
 
 alert(`Sum of numbers = ${total}`);
 
-// ========================================================================
-// Попытка без континью и с более сложным иф условием, но понял, что там буль, получилось только заменить на элсе.
+// ================================Попытка без континью и с более сложным иф условием===========
 // let total = 0;
 
 // do {
@@ -177,15 +157,3 @@ alert(`Sum of numbers = ${total}`);
 // } while (true);
 
 // alert(`Общая сумма чисел равна ${total}`);
-
-// =============================================================================
-// Вариант с внешним условием//null = 0 не прервется
-// const total = 0
-// let userInput;
-// do {
-//     userInput = prompt("Please, enter number");
-//     userInput = Number(userInput);
-
-// } while (userInput !== null);
-
-// ===================================================================================
