@@ -1,14 +1,12 @@
 "use strict"
 
-let i; // эту перменную разве обязательно объявлять?
 const logItems = function (array) {
-    for (const argument of arguments) {
-        for (i = 0; i < arguments.length; i += 1) {
-            const redet = i + 1;
-            const results = [];
-            results.push(`${redet} - ${argument[i]}`);
-            console.log(results);
-        }
+
+    const arrayLength = array.length;
+
+    for (let i = 0; i < arrayLength; i += 1) {
+
+        console.log(`${i + 1} - ${array[i]}`);
     }
 }
 

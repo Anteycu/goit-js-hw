@@ -1,12 +1,11 @@
 "use strict"
 
-// Результат на выходе правильный считает, но постоянно в паре с undefined, почему?
 const calculateEngravingPrice = function (message, pricePerWord) {
     const sentence = message.split(" ");
     message = sentence.length;
-    // pricePerWord = Number.pricePerWord; - NaN почему, разве он не преобразовывает в число?
+    pricePerWord = Number(pricePerWord);
     const totalCost = message * pricePerWord;
-    console.log(totalCost);
+    return (totalCost);
 };
 
 /*

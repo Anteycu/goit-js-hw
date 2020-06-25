@@ -6,20 +6,33 @@
 // 3. если символов > 40, то обрезаем исходник до 40 ка
 // 4. добавляем к обрезку...
 // 5. возвращаем функцию
+
+// ==============мой вариант=======================
+// const formatString = function (string) {
+//     let symbols = string.length;
+//     // symbols = Number(symbols);
+//     console.log(symbols)
+//     if (symbols > 40) {
+//         // console.log(string.slice(0, 40));
+//         const shortCutArr = string.slice(0, 40).split("");
+//         // console.log(shortCutArr);
+//         shortCutArr.push('...');
+//         console.log(shortCutArr.join(""));
+//         return;
+//     } else {
+//         console.log(string);
+//     }
+// };
+
+// ============================оптимизированный вариант ментора====================
 const formatString = function (string) {
-    let symbols = string.length;
-    // symbols = Number(symbols);
-    console.log(symbols)
-    if (symbols > 40) {
-        // console.log(string.slice(0, 40));
-        const shortCutArr = string.slice(0, 40).split("");
-        // console.log(shortCutArr);
-        const modedShortCutArr = shortCutArr.push('...');
-        console.log(shortCutArr.join(""));
-        return;
+    let result;
+    if (string.length < 40) {
+        result = string;
     } else {
-        console.log(string);
+        result = string.slice(0, 40) + "...";
     }
+    return result
 };
 
 /*

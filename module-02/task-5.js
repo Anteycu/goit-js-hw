@@ -4,10 +4,8 @@
 // 2.пишем условие через иф
 // 3.добавляя инклудсы спам и сэйл
 // 4. задаем апперкейс и ловеркэйс
-//  const checkWords = ["sale".toUpperCase(), "sale".toLowerCase(),
-//      "spam".toUpperCase(), "spam".toLowerCase()];
 
-// ==============================убил 5 часов, пробовал разные вариации - ничего не получилось==============
+// // ==============================пробовал разные вариации - еще доделаю такой вариант позже==============
 // const checkForSpam = function (message) {
 //     const messageArray = message.split(" ");
 //     const checkWords = ["sale".toUpperCase(), "sale".toLowerCase(),
@@ -25,7 +23,7 @@
 //     }
 // }
 
-//============================попытка 2 с примером от Репеты(упрощенный вариант под 1 переменную) ===============
+//============================попытка 2 с примером от Репеты(упрощенный вариант под 1 проверочное слово) ===============
 // const checkForSpam = function (message) {
 //     const messageArray = message.split(" ");
 //     let findWord = "sale";
@@ -36,30 +34,17 @@
 //     }
 //     return "false";
 // };
-// ===========================вариант второй попытки 2 (еще минус 2 часа, ничего не понятно, но очень интересно =))===========================
-const wordsToFind = ["sale", "[SPAM]"];
+// ===========================вариант c ментором оптимизированный(проверять этот)===========================
+
 const checkForSpam = function (message) {
-    const messageArray = message.split(" ");
+    const modedMassage = message.toLowerCase();
 
-    for (const findWord of wordsToFind) {
-        let isInWord = messageArray.includes(findWord);
-        if (isInWord) {
-            return isInWord;
-            // console.log(isInWord);
-            // break;
-        }
-        // if (isInWord === isInWord) {
-        //     return isInWord;
-        //     console.log(isInWord);
-        //     continue;
-        // }
+    if (modedMassage.includes("[spam]") || modedMassage.includes("sale")) {
+        return true;
+    } else {
+        return false;
     }
-    console.log("false");
-    // return isInWord;
-
 };
-
-//Результат похож, но я уверен, должен быть способ выдать без консоли, подскажете?
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
