@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ====================navigation================ */
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.navigationLink {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.navigationLink a {
+    padding: 5px;
+    width: 100px;
+    text-decoration: none;
+    color: wheat;
+}
+
+.activeNavigationLink {
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+}
+
+/* ==========================product form====================== */
+
+.productForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.formInput {
+    margin-right: 5px;
+}
+
+.formInput::placeholder {
+    padding-left: 5px;
+}
+
+.formButton {
+    width: 100px;
+    padding: 5px;
+    background-color: cornflowerblue;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* ====================pages=================== */
+
+.content {
+    padding: 5px;
+}
+
+.pageTitle {
+    color: wheat;
+}
