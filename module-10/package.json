@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Anteycu/goit-js-hw/tree/master/module-10"
   },
-  "homepage": "https://anteycu.github.io/goit-js-hw/module-10/",
+  "homepage": "https://anteycu.github.io/goit-js-hw",
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
