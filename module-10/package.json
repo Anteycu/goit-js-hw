@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
+    "url": "git+https://github.com/Anteycu/goit-js-hw/tree/master/module-10"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
+    "url": "https://github.com/Anteycu/goit-js-hw/tree/master/module-10"
   },
   "homepage": "https://anteycu.github.io/goit-js-hw/module-10/",
   "devDependencies": {
