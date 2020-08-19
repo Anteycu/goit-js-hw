@@ -1,5 +1,3 @@
-"use strict";
-
 // ============================hw-1-1==================================
 // const name = 'Генератор защитного поля';
 // let price = '1000';
@@ -76,32 +74,32 @@
 // const delivery = prompt(delivInfo);
 
 // if (delivery !== null) {
-//     switch (delivery) {
-//         case country = "Китай":
-//             price = 100;
-//             delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
-//             break;
-//         case country = "Чили":
-//             price = 250;
-//             delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
-//             break;
-//         case country = "Австралия":
-//             price = 170;
-//             delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
-//             break;
-//         case country = "Индия":
-//             price = 80;
-//             delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
-//             break;
-//         case country = "Ямайка":
-//             price = 120;
-//             delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
-//             break;
-//         default:
-//             delivInfo = "Invalid country name"
-//     }
+//   switch (delivery) {
+//     case (country = "Китай"):
+//       price = 100;
+//       delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
+//       break;
+//     case (country = "Чили"):
+//       price = 250;
+//       delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
+//       break;
+//     case (country = "Австралия"):
+//       price = 170;
+//       delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
+//       break;
+//     case (country = "Индия"):
+//       price = 80;
+//       delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
+//       break;
+//     case (country = "Ямайка"):
+//       price = 120;
+//       delivInfo = `Доставка в ${country} будет стоить ${price} кредитов`;
+//       break;
+//     default:
+//       delivInfo = "Invalid country name";
+//   }
 // } else {
-//     delivInfo = "Canceled by user";
+//   delivInfo = "Canceled by user";
 // }
 // console.log(delivInfo);
 
@@ -117,43 +115,41 @@
 let total = 0;
 
 do {
-    let userInput = prompt("Please, enter number!");
-    if (userInput === null) {
-        console.log("Canceled by user, take your result!");
-        break;
-    }
-    userInput = Number(userInput);
+  let userInput = prompt("Please, enter number!");
+  if (userInput === null) {
+    console.log("Canceled by user, take your result!");
+    break;
+  }
+  userInput = Number(userInput);
 
-    const notNumber = Number.isNaN(userInput);
+  const notNumber = Number.isNaN(userInput);
 
-    if (notNumber) {
-        alert("Dont save this iteration, please, enter a number!");
-        continue;
-    }
+  if (notNumber) {
+    alert("Dont save this iteration, please, enter a number!");
+    continue;
+  }
 
-    total += userInput;
-    console.log("Saved this iteration!");
-
+  total += userInput;
+  console.log("Saved this iteration!");
 } while (true);
 
 alert(`Sum of numbers = ${total}`);
 
-// ================================Попытка без континью и с более сложным иф условием===========
+// ================================Вариант без континью и с более сложным иф условием===========
 // let total = 0;
 
 // do {
-//     let userInput = prompt("Please, enter number");
-//     if (userInput === null) {
-//         break;
-//     }
-//     userInput = Number(userInput);
+//   let userInput = prompt("Please, enter number");
+//   if (userInput === null) {
+//     break;
+//   }
+//   userInput = Number(userInput);
 
-//     const notNumber = Number.isNaN(userInput);
+//   const notNumber = Number.isNaN(userInput);
 
-//     if (notNumber !== false) {
-//         alert("Please, enter a number!")
-//     } else total += userInput;
-
+//   if (notNumber !== false) {
+//     alert("Please, enter a number!");
+//   } else total += userInput;
 // } while (true);
 
 // alert(`Общая сумма чисел равна ${total}`);
