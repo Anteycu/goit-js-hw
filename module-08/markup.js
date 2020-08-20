@@ -3,9 +3,8 @@
 import { default as galleryImages } from "./gallery-items.js";
 
 export const createMarkup = () =>
-  galleryImages.reduce((acc, element) => {
+  galleryImages.map((element) => {
     const ulRef = document.querySelector(".js-gallery");
-    // const fragment = document.createDocumentFragment();
     const liRef = document.createElement("li");
     const aRef = document.createElement("a");
     const imgRef = document.createElement("img");
@@ -21,10 +20,5 @@ export const createMarkup = () =>
 
     aRef.appendChild(imgRef);
     liRef.appendChild(aRef);
-
-    // fragment.append(liRef, aRef, imgRef)//как то можно одним методом добавлять множество детей детям через запятую?
-    acc += liRef;
-    // console.log(acc)
     ulRef.append(liRef);
-    // return ulRef
-  }, "");
+  });
