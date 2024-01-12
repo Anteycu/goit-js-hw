@@ -4,7 +4,7 @@ const inputRef = document.querySelector("#validation-input");
 // прописуємо функціонал в іменному колбеку
 const validationHandler = (event) => {
   const {
-    currentTarget: { classList, dataset, value },
+    currentTarget: { dataset, value },
   } = event;
   if (value.length >= dataset.length) {
     switcher("valid", "invalid");
