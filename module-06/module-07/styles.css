@@ -1,0 +1,36 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.galleryImg {
+    border-radius: 5%;
+}
+
+.gallery-js {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style: none;
+    padding: 2%;
+    border: solid goldenrod;
+}
+
+.gallery__item:not(:last-child) {
+    margin-right: 20px;
+    display: flex;
+    align-items: stretch;
+}
+
+#validation-input {
+       border: 3px solid #bdbdbd;
+}
+    
+#validation-input.valid {
+       border-color: #4caf50;
+}
+    
+#validation-input.invalid {
+       border-color: #f44336;
+}
