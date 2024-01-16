@@ -14,5 +14,5 @@ const markup = ingredients.map((item) => {
   return li;
 });
 
-const ingredientList = document.querySelector("#ingredients");
-ingredientList.append(...markup);
+const ingredientsList = document.querySelector("#ingredients");
+ingredientsList.append(...markup);
