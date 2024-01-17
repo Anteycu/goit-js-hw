@@ -1,26 +1,28 @@
 const formRef = document.querySelector(".login-form");
 
-const submitHandler = (evt) => {
+formRef.addEventListener("submit", onSubmit);
+
+function onSubmit(evt) {
   evt.preventDefault();
-  const { target } = evt;
-  const email = target.elements.email.value;
-  const password = target.elements.password.value;
+  const {
+    email: { value: email },
+    password: { value: password },
+  } = evt.currentTarget.elements;
 
   if (!email || !password) {
     alert("Please, enter your email and password");
     return;
   }
+
   const user = {
     email,
     password,
   };
-
   printUserData(user);
-  target.reset();
-};
+
+  evt.currentTarget.reset();
+}
 
 function printUserData(user) {
   console.log(user);
 }
-
-formRef.addEventListener("submit", submitHandler);

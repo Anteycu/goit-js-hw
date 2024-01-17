@@ -13,10 +13,10 @@ const buttonRef = widgetElemArr.find(
 const pRef = widgetElemArr.find((elem) => elem.children);
 const spanRef = [...pRef.children].find((elem) => elem.className === "color");
 
+buttonRef.addEventListener("click", changeColorHandler);
+
 function changeColorHandler() {
   const generatedColor = getRandomHexColor();
   bodyRef.style.backgroundColor = generatedColor;
   spanRef.textContent = generatedColor;
 }
-
-buttonRef.addEventListener("click", changeColorHandler);

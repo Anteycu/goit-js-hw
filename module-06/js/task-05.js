@@ -2,14 +2,13 @@
 const inputRef = document.querySelector("#name-input");
 const outputRef = document.querySelector("#name-output");
 
-// прописуємо іменований колбек
-const inputHandler = (evt) => {
+// додаємо слухача
+inputRef.addEventListener("input", onInput);
+
+// пишемо іменований колбек
+function onInput(evt) {
   const {
     currentTarget: { value: inputValue },
   } = evt;
-  const isEmpty = inputValue.length;
-  outputRef.textContent = isEmpty ? inputValue : "Anonymous";
-};
-
-// ставимо слухача
-inputRef.addEventListener("input", inputHandler);
+  outputRef.textContent = inputValue.length ? inputValue : "Anonymous";
+}

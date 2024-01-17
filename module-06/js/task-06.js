@@ -1,8 +1,11 @@
 // отримуємо доступ
 const inputRef = document.querySelector("#validation-input");
 
+// додаємо слухача
+inputRef.addEventListener("blur", validationHandler);
+
 // прописуємо функціонал в іменному колбеку
-const validationHandler = (event) => {
+function validationHandler(event) {
   const {
     currentTarget: { dataset, value },
   } = event;
@@ -11,13 +14,10 @@ const validationHandler = (event) => {
     return;
   }
   switcher("invalid", "valid");
-};
+}
 
 // створюємо службову функцію
 function switcher(add, remove, elem = inputRef) {
   elem.classList.add(add);
   elem.classList.remove(remove);
 }
-
-// додаємо слухача
-inputRef.addEventListener("blur", validationHandler);
