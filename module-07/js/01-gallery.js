@@ -2,15 +2,24 @@ import { galleryItems } from "./gallery-items.js";
 const galleryRef = document.querySelector(".gallery");
 galleryRef.addEventListener("click", onClick);
 
+// вирішити протікання пам'яті
+
 function onClick(evt) {
   evt.preventDefault();
+  const modal = createModal(evt.target);
+  // відв'язати від модалки
+  modal.show(document.addEventListener("keydown", closeHandler.bind(modal)));
+  // прокинути результат closeHandler та активувати закриття модалки
+}
+
+function createModal(elem) {
   const {
     dataset: { source },
     attributes: { alt },
-  } = evt.target;
+  } = elem;
   const description = alt.value;
 
-  const instance = basicLightbox.create(`
+  return basicLightbox.create(`
   	<img
         class="gallery__image"
         src="${source}"
@@ -19,7 +28,6 @@ function onClick(evt) {
       />
       <p>${description}</p>
   `);
-  instance.show();
 }
 
 function createMarkup(arr) {
@@ -39,7 +47,12 @@ function createMarkup(arr) {
     )
     .join("");
 }
-
 galleryRef.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
 
-// console.log(galleryItems);
+// зробити isEscape
+function closeHandler(evt) {
+  if (evt.code === "Escape") {
+    this.close();
+  }
+  console.dir(evt.currentTarget);
+}
