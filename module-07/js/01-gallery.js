@@ -2,32 +2,40 @@ import { galleryItems } from "./gallery-items.js";
 const galleryRef = document.querySelector(".gallery");
 galleryRef.addEventListener("click", onClick);
 
-// вирішити протікання пам'яті
-
 function onClick(evt) {
   evt.preventDefault();
-  const modal = createModal(evt.target);
-  // відв'язати від модалки
-  modal.show(document.addEventListener("keydown", closeHandler.bind(modal)));
-  // прокинути результат closeHandler та активувати закриття модалки
+  const { classList, dataset, attributes } = evt.target;
+  if (!classList.contains("gallery__image")) {
+    return;
+  }
+  const modal = createModal({ dataset, attributes });
+  modal.show(onClose(modal));
 }
 
-function createModal(elem) {
-  const {
-    dataset: { source },
-    attributes: { alt },
-  } = elem;
-  const description = alt.value;
+function createModal({ dataset, attributes }) {
+  const description = attributes.alt.value;
 
   return basicLightbox.create(`
   	<img
         class="gallery__image"
-        src="${source}"
+        src="${dataset.source}"
         alt="${description}"
         width="800" height="600"
       />
       <p>${description}</p>
   `);
+}
+
+function onClose(instance) {
+  document.addEventListener("keydown", closeHandler);
+  function closeHandler(evt) {
+    const isEscape = evt.code === "Escape";
+    if (!isEscape) {
+      return;
+    }
+    instance.close();
+    document.removeEventListener("keydown", closeHandler);
+  }
 }
 
 function createMarkup(arr) {
@@ -48,11 +56,3 @@ function createMarkup(arr) {
     .join("");
 }
 galleryRef.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
-
-// зробити isEscape
-function closeHandler(evt) {
-  if (evt.code === "Escape") {
-    this.close();
-  }
-  console.dir(evt.currentTarget);
-}
