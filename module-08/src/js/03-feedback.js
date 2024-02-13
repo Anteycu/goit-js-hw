@@ -19,32 +19,33 @@ const load = key => {
   }
 };
 
-let inputData = { email: "", message: "" };
-const formState = load("feedback-form-state");
-if (formState) {
-  formRef.elements.email.value = formState.email;
-  formRef.elements.message.value = formState.message;
-} else {
-  formRef.elements.email.value = inputData.email;
-  formRef.elements.message.value = inputData.message;
+let formState = load("feedback-form-state") ?? {};
+
+const isObjectEmpty =
+  Object.keys(formState).length === 0 && formState.constructor === Object;
+if (!isObjectEmpty) {
+  const {
+    elements: { email, message },
+  } = formRef;
+  email.value = formState.email;
+  message.value = formState.message;
 }
 
 const onInput = function (e) {
   e.preventDefault();
   const { target } = e;
-  inputData = { ...inputData, [target.name]: target.value };
-  save("feedback-form-state", inputData);
-  console.log(inputData);
+  formState = { ...formState, [target.name]: target.value };
+  save("feedback-form-state", formState);
 };
 
-const onSubmit = function (e) {
-  e.preventDefault();
-  const initialInputData = { email: "", message: "" };
-  const { target } = e;
-  console.log(target.elements.email.value, target.elements.message.value);
-  target.elements.email.value = initialInputData.email;
-  target.elements.message.value = initialInputData.message;
-  save("feedback-form-state", initialInputData);
+const onSubmit = function (evt) {
+  evt.preventDefault();
+  const {
+    elements: { email, message },
+  } = evt.target;
+  console.log(email.value, message.value);
+  localStorage.removeItem("feedback-form-state");
+  formRef.reset();
 };
 
 formRef.addEventListener("input", throttle(onInput, 500));
