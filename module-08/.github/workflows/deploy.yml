@@ -13,8 +13,8 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm ci
           cd module-08
+          npm ci
           npm run build
 
       - name: Deploy 🚀
